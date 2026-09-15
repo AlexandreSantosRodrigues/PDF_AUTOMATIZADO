@@ -10,3 +10,34 @@ Antes de rodar o script, você precisará ter o Python instalado e a biblioteca 
 
 ```bash
 pip install PyPDF2
+```
+
+## 💻 Como usar
+No Kaggle / Google Colab:
+1 - Faça o upload dos PDFs que deseja juntar.
+2 - Copie o código do arquivo main.py para uma célula.
+3 - Altere os nomes das variáveis arquivo1 e arquivo2 para os nomes dos seus arquivos.
+4 - Execute a célula e baixe o arquivo gerado.
+
+## Localmente (Terminal):
+1 - Clone este repositório:
+ git clone https://github.com/seu-usuario/nome-do-repositorio.git
+2 - Coloque seus PDFs na mesma pasta do script.
+3 - Execute o script:
+ python main.py
+
+## 📜 Código Principal
+Python
+
+from PyPDF2 import PdfWriter
+
+merger = PdfWriter()
+
+ Adicione quantos arquivos quiser na lista abaixo
+arquivos = ["arquivo1.pdf", "arquivo2.pdf"]
+
+for pdf in arquivos:
+    merger.append(pdf)
+
+merger.write("pdf_final_unificado.pdf")
+merger.close()
